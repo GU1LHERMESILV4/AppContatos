@@ -1,0 +1,28 @@
+<form [formGroup]="pessoaForm" (ngSubmit)="salvar()">
+    <label>Nome:</label>
+    <input type="text" formControlName="nome" />
+    <div *ngIf="pessoaForm.get('nome')?.invalid && pessoaForm.get('nome')?.touched">
+      Nome é obrigatório e deve ter pelo menos 3 caracteres.
+    </div>
+  
+    <label>CEP:</label>
+    <input type="text" formControlName="cep" (blur)="buscarCep()" />
+    <div *ngIf="pessoaForm.get('cep')?.invalid && pessoaForm.get('cep')?.touched">
+      CEP inválido.
+    </div>
+  
+    <label>Endereço:</label>
+    <input type="text" formControlName="endereco" readonly />
+  
+    <label>Cidade:</label>
+    <input type="text" formControlName="cidade" readonly />
+  
+    <label>UF:</label>
+    <input type="text" formControlName="uf" readonly />
+  
+    <label>Celular:</label>
+    <input type="text" formControlName="celular" />
+  
+    <button type="submit" [disabled]="pessoaForm.invalid">Salvar</button>
+  </form>
+  
