@@ -18,22 +18,6 @@ Este projeto tem como objetivo avaliar habilidades no desenvolvimento de aplicat
 - **API do ViaCEP** (para busca de endereços automática)
 - **JSON Server (ou API REST real) para simulação de backend**
 
-## Estrutura do Projeto
-```
-/src
-  /app
-    /components
-      /tabela-pessoas  # Componente de listagem de pessoas
-    /pages
-      /listar-pessoas  # Página principal de listagem
-      /cadastrar-pessoa  # Página de cadastro
-      /editar-pessoa  # Página de edição
-    /services
-      pessoa.service.ts  # Serviço para manipulação de dados
-    /models
-      pessoa.model.ts  # Interface para tipagem de Pessoa
-```
-
 ## Instalação e Execução
 ### Requisitos
 - Node.js e npm instalados
