@@ -3,13 +3,14 @@ import { PersonService } from 'src/app/services/person.service';
 import { Router } from '@angular/router';
 
 interface Person {
-  id: number;
-  name: string;
-  address: string;
-  cep: string;
-  uf: string;
-  phone: string;
-  active: boolean;
+    id: number;
+    name: string;
+    cep: string;
+    address: string;
+    city: string;
+    uf: string;
+    phone?: string;
+    active?: boolean;
 }
 
 @Component({
@@ -20,7 +21,8 @@ interface Person {
 export class PersonListComponent implements OnInit {
   people: Person[] = [];
 
-  constructor(private personService: PersonService, private router: Router) {}
+  constructor(public personService: PersonService, public router: Router) {}
+
 
   ngOnInit(): void {
     this.loadPeople();

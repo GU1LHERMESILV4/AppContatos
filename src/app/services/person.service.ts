@@ -3,13 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 interface Person {
-  id: number;
+  id?: number;
   name: string;
-  address: string;
   cep: string;
+  address: string;
+  city: string;
   uf: string;
-  phone: string;
-  active: boolean;
 }
 
 @Injectable({
@@ -20,9 +19,13 @@ export class PersonService {
 
   constructor(private http: HttpClient) {}
 
+  createPerson(data: Person): Observable<Person> {
+    return this.http.post<Person>(`${this.apiUrl}`, data);
+  }
+  
   getPeople(): Observable<Person[]> {
     return this.http.get<Person[]>(this.apiUrl);
-  }
+  }  
 
   deletePerson(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);

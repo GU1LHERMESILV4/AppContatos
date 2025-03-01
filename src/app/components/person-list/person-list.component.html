@@ -23,6 +23,7 @@
         <td>{{ person.phone }}</td>
         <td>{{ person.active ? 'Sim' : 'Não' }}</td>
         <td>
+          <button (click)="router.navigate(['/create'])">Cadastrar Pessoa</button>
           <button (click)="editPerson(person.id)">Editar</button>
           <button (click)="deletePerson(person.id)">Excluir</button>
         </td>
