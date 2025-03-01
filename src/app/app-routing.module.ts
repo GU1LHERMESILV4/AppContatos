@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListagemPessoasComponent } from './components/listagem-pessoas/listagem-pessoas.component';
-import { FormularioPessoaComponent } from './components/formulario-pessoa/formulario-pessoa.component';
+import { PersonListComponent } from './components/person-list/person-list.component';
+import { PersonEditComponent } from './components/person-edit/person-edit.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'listagem', pathMatch: 'full' },
-  { path: 'listagem', component: ListagemPessoasComponent },
-  { path: 'cadastro', component: FormularioPessoaComponent },
-  { path: '**', redirectTo: 'listagem' } // Redireciona caso a rota seja inválida
+  { path: '', component: PersonListComponent },
+  { path: 'edit/:id', component: PersonEditComponent },
 ];
 
 @NgModule({

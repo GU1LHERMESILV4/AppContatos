@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Editar Pessoa - ID: {{ personId }}</h2>
+  <form>
+    <label>Nome:</label>
+    <input type="text" />
+
+    <label>Endereço:</label>
+    <input type="text" />
+
+    <label>CEP:</label>
+    <input type="text" />
+
+    <label>UF:</label>
+    <input type="text" />
+
+    <label>Celular:</label>
+    <input type="text" />
+
+    <label>Ativo:</label>
+    <select>
+      <option value="true">Sim</option>
+      <option value="false">Não</option>
+    </select>
+
+    <button (click)="saveChanges()">Salvar</button>
+    <button (click)="cancel()">Cancelar</button>
+  </form>
+</div>

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'AppContatos'`, () => {
+  it(`should have as title 'ecommerce-jps-2025-angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('AppContatos');
+    expect(app.title).toEqual('ecommerce-jps-2025-angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('AppContatos app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ecommerce-jps-2025-angular app is running!');
   });
 });
