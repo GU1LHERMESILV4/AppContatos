@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonListComponent } from './components/person-list/person-list.component';
-import { PersonEditComponent } from './components/person-edit/person-edit.component';
 import { PersonCreateComponent } from './components/person-create/person-create.component';
+import { PersonEditComponent } from './components/person-edit/person-edit.component';
 
 const routes: Routes = [
-  { path: '', component: PersonListComponent },
+  { path: 'list', component: PersonListComponent },
   { path: 'create', component: PersonCreateComponent },
-  { path: 'edit/:id', component: PersonEditComponent }
+  { path: 'edit/:id', component: PersonEditComponent },
+  { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 
 @NgModule({

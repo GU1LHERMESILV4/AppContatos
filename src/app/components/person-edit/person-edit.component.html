@@ -1,28 +1,24 @@
-<div class="container">
-  <h2>Editar Pessoa - ID: {{ personId }}</h2>
-  <form>
-    <label>Nome:</label>
-    <input type="text" />
+<h2>Editar Pessoa</h2>
 
-    <label>Endereço:</label>
-    <input type="text" />
+<form (ngSubmit)="updatePerson()">
+  <label>Nome:</label>
+  <input type="text" [(ngModel)]="person.name" name="name" required />
 
-    <label>CEP:</label>
-    <input type="text" />
+  <label>CEP:</label>
+  <input type="text" [(ngModel)]="person.cep" name="cep" required />
 
-    <label>UF:</label>
-    <input type="text" />
+  <label>Endereço:</label>
+  <input type="text" [(ngModel)]="person.address" name="address" required />
 
-    <label>Celular:</label>
-    <input type="text" />
+  <label>Cidade:</label>
+  <input type="text" [(ngModel)]="person.city" name="city" required />
 
-    <label>Ativo:</label>
-    <select>
-      <option value="true">Sim</option>
-      <option value="false">Não</option>
-    </select>
+  <label>UF:</label>
+  <input type="text" [(ngModel)]="person.uf" name="uf" required />
 
-    <button (click)="saveChanges()">Salvar</button>
-    <button (click)="cancel()">Cancelar</button>
-  </form>
-</div>
+  <label>Telefone:</label>
+  <input type="text" [(ngModel)]="person.phone" name="phone" />
+
+  <button type="submit">Salvar</button>
+  <button type="button" (click)="router.navigate(['/list'])">Cancelar</button>
+</form>

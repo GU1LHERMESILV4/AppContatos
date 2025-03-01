@@ -1,17 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from 'src/app/services/person.service';
 import { Router } from '@angular/router';
+import { Person } from 'src/app/interfaces/person.model';
 
-interface Person {
-    id: number;
-    name: string;
-    cep: string;
-    address: string;
-    city: string;
-    uf: string;
-    phone?: string;
-    active?: boolean;
-}
 
 @Component({
   selector: 'app-person-list',
@@ -29,11 +20,14 @@ export class PersonListComponent implements OnInit {
   }
 
   loadPeople(): void {
-    this.personService.getPeople().subscribe((data) => {
-      this.people = data;
+    this.personService.getPeople().subscribe((data: Person[]) => {
+      this.people = data.map(person => ({
+        ...person,
+        id: person.id ?? 0
+      }));
     });
   }
-
+  
   editPerson(id: number): void {
     this.router.navigate(['/edit', id]);
   }

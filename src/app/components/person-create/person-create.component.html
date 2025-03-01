@@ -1,23 +1,19 @@
-<div class="container">
-    <h2>Cadastrar Pessoa</h2>
-    <form (submit)="savePerson()">
-      <label>Nome:</label>
-      <input type="text" [(ngModel)]="person.name" name="name" required />
+<form [formGroup]="personForm">
+    <label>Nome:</label>
+    <input type="text" formControlName="nome" required />
   
-      <label>CEP:</label>
-      <input type="text" [(ngModel)]="person.cep" name="cep" required />
+    <label>CEP:</label>
+    <input type="text" formControlName="cep" (blur)="buscarCep()" required />
   
-      <label>Endereço:</label>
-      <input type="text" [(ngModel)]="person.address" name="address" required />
+    <label>Endereço:</label>
+    <input type="text" formControlName="endereco" required />
   
-      <label>Cidade:</label>
-      <input type="text" [(ngModel)]="person.city" name="city" required />
+    <label>Cidade:</label>
+    <input type="text" formControlName="cidade" required />
   
-      <label>UF:</label>
-      <input type="text" [(ngModel)]="person.uf" name="uf" required />
+    <label>UF:</label>
+    <input type="text" formControlName="uf" required />
   
-      <button type="submit">Salvar</button>
-      <button type="button" (click)="router.navigate(['/'])">Cancelar</button>
-    </form>
-  </div>
+    <button type="submit">Salvar</button>
+  </form>
   

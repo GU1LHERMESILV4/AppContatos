@@ -1,26 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PersonService } from 'src/app/services/person.service';
+import { Person } from 'src/app/interfaces/person.model';
 
 @Component({
   selector: 'app-person-edit',
   templateUrl: './person-edit.component.html',
-  //styleUrls: ['./person-edit.component.css']
 })
 export class PersonEditComponent implements OnInit {
-  personId!: number;
+  person: Person = {
+    id: 0,
+    name: '',
+    cep: '',
+    address: '',
+    city: '',
+    uf: '',
+    phone: ''
+  };
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private personService: PersonService,
+    public router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.personId = Number(this.route.snapshot.paramMap.get('id'));
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.personService.getPersonById(id).subscribe((data) => {
+        this.person = data;
+      });
+    }
   }
 
-  saveChanges(): void {
-    alert('Salvar alterações');
-    this.router.navigate(['/']);
-  }
-
-  cancel(): void {
-    this.router.navigate(['/']);
+  updatePerson(): void {
+    if (this.person.id) {
+      this.personService.updatePerson(this.person.id, this.person).subscribe(() => {
+        alert('Pessoa atualizada com sucesso!');
+        this.router.navigate(['/list']);
+      });
+    }
   }
 }
