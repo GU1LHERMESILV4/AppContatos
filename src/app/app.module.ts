@@ -6,9 +6,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
-import { PersonListComponent } from './components/person-list/person-list.component';
-import { PersonEditComponent } from './components/person-edit/person-edit.component';
-import { PersonCreateComponent } from './components/person-create/person-create.component';
+import { PersonListComponent } from './pages/person-list/person-list.component';
+import { PersonEditComponent } from './pages/person-edit/person-edit.component';
+import { PersonCreateComponent } from './pages/person-create/person-create.component';
 import { PersonTableComponent } from './components/person-table/person-table.component';
 import { HomeComponent } from './components/home/home.component';
 
