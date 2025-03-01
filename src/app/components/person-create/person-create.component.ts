@@ -6,6 +6,7 @@ import { Person } from 'src/app/interfaces/person.model';
 @Component({
   selector: 'app-person-create',
   templateUrl: './person-create.component.html',
+  styleUrls: ['./person-create.component.scss']
 })
 export class PersonCreateComponent implements OnInit {
   personForm!: FormGroup;

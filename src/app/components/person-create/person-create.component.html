@@ -1,30 +1,34 @@
-<form [formGroup]="personForm" class="person-form">
-  <div class="form-group">
-    <label for="nome">Nome:</label>
-    <input id="nome" type="text" formControlName="nome" placeholder="Digite seu nome" required />
-  </div>
+<div class="background">
+  <div class="form-container">
+    <h2>Cadastro de Pessoa</h2>
+    <form [formGroup]="personForm">
+      
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" formControlName="nome" placeholder="Digite seu nome" required />
+      </div>
 
-  <div class="form-group">
-    <label for="cep">CEP:</label>
-    <input id="cep" type="text" formControlName="cep" placeholder="Digite seu CEP" (blur)="buscarCep()" required />
-  </div>
+      <div class="form-group">
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" formControlName="cep" placeholder="Digite seu CEP" (blur)="buscarCep()" required />
+      </div>
 
-  <div class="form-group">
-    <label for="endereco">Endereço:</label>
-    <input id="endereco" type="text" formControlName="endereco" placeholder="Digite seu endereço" required />
-  </div>
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" formControlName="endereco" placeholder="Digite seu endereço" required />
+      </div>
 
-  <div class="form-group">
-    <label for="cidade">Cidade:</label>
-    <input id="cidade" type="text" formControlName="cidade" placeholder="Digite sua cidade" required />
-  </div>
+      <div class="form-group">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" formControlName="cidade" placeholder="Digite sua cidade" required />
+      </div>
 
-  <div class="form-group">
-    <label for="uf">UF:</label>
-    <input id="uf" type="text" formControlName="uf" placeholder="Digite a UF" required />
-  </div>
+      <div class="form-group">
+        <label for="uf">UF:</label>
+        <input type="text" id="uf" formControlName="uf" placeholder="Digite a UF" required />
+      </div>
 
-  <div class="btn-container">
-    <button type="submit" class="btn btn-success">Salvar</button>
+      <button type="submit" class="btn-salvar">Salvar</button>
+    </form>
   </div>
-</form>
+</div>
