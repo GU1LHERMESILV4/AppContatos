@@ -22,9 +22,11 @@ export class ListagemPessoasComponent implements OnInit {
     });
   }
 
-  editarPessoa(id: number): void {
-    this.router.navigate(['/editar', id]);
-  }
+  editarPessoa(id?: number) {
+    if (id !== undefined) {
+      this.router.navigate(['/editar', id]);
+    }
+  }  
 
   excluirPessoa(id: number): void {
     if (confirm('Tem certeza que deseja excluir?')) {

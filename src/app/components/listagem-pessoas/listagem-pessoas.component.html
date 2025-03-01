@@ -1,33 +1,44 @@
-<button routerLink="/cadastrar">Nova Pessoa</button>
-
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Endereço</th>
-      <th>CEP</th>
-      <th>Cidade</th>
-      <th>UF</th>
-      <th>Celular</th>
-      <th>Ativo</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let pessoa of pessoas">
-      <td>{{ pessoa.id }}</td>
-      <td>{{ pessoa.nome }}</td>
-      <td>{{ pessoa.endereco }}</td>
-      <td>{{ pessoa.cep }}</td>
-      <td>{{ pessoa.cidade }}</td>
-      <td>{{ pessoa.uf }}</td>
-      <td>{{ pessoa.celular }}</td>
-      <td>{{ pessoa.ativo ? 'Sim' : 'Não' }}</td>
-      <td>
-        <button (click)="editarPessoa(pessoa.id)">Editar</button>
-        <button (click)="excluirPessoa(pessoa.id)">Excluir</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Lista de Contatos</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>CEP</th>
+            <th>UF</th>
+            <th>Celular</th>
+            <th>Ativo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pessoa of pessoas">
+            <td>{{ pessoa.id }}</td>
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.endereco }}</td>
+            <td>{{ pessoa.cep }}</td>
+            <td>{{ pessoa.uf }}</td>
+            <td>{{ pessoa.celular }}</td>
+            <td>
+              <span class="badge bg-success" *ngIf="pessoa.ativo">Ativo</span>
+              <span class="badge bg-danger" *ngIf="!pessoa.ativo">Inativo</span>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-warning me-2" (click)="editarPessoa(pessoa.id)">
+                <i class="fa fa-edit"></i> Editar
+              </button>
+              <button class="btn btn-sm btn-danger" (click)="excluirPessoa(pessoa.id)">
+                <i class="fa fa-trash"></i> Excluir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
