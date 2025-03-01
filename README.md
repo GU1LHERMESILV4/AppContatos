@@ -1,27 +1,79 @@
-# EcommerceJps2025Angular
+# Gerenciamento de Pessoas - Angular 16
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Descrição
+Este projeto tem como objetivo avaliar habilidades no desenvolvimento de aplicativos web utilizando o framework Angular 16. A aplicação permite listar, cadastrar, editar e excluir Pessoas, seguindo boas práticas e padrões recomendados.
 
-## Development server
+## Funcionalidades
+- **Listagem de Pessoas**: Exibe uma tabela com ID, Nome, Endereço, CEP, UF, Ativo e Contatos. Inclui botões de edição e exclusão.
+- **Cadastro de Pessoas**: Permite adicionar novas pessoas preenchendo os campos obrigatórios.
+- **Edição de Pessoas**: Permite editar os dados de uma pessoa cadastrada.
+- **Exclusão de Pessoas**: Confirmação de remoção antes da exclusão do registro.
+- **Busca automática de endereço via API do ViaCEP** ao digitar o CEP.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
+- **Angular 16**
+- **TypeScript**
+- **HTML5 & CSS3**
+- **Bootstrap ou Material Angular (opcional para UI)**
+- **API do ViaCEP** (para busca de endereços automática)
+- **JSON Server (ou API REST real) para simulação de backend**
 
-## Code scaffolding
+## Estrutura do Projeto
+```
+/src
+  /app
+    /components
+      /tabela-pessoas  # Componente de listagem de pessoas
+    /pages
+      /listar-pessoas  # Página principal de listagem
+      /cadastrar-pessoa  # Página de cadastro
+      /editar-pessoa  # Página de edição
+    /services
+      pessoa.service.ts  # Serviço para manipulação de dados
+    /models
+      pessoa.model.ts  # Interface para tipagem de Pessoa
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalação e Execução
+### Requisitos
+- Node.js e npm instalados
+- Angular CLI instalado (`npm install -g @angular/cli`)
 
-## Build
+### Passos
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   ```
+2. Entre na pasta do projeto:
+   ```sh
+   cd nome-do-projeto
+   ```
+3. Instale as dependências:
+   ```sh
+   npm install
+   ```
+4. Inicie o servidor JSON Server (se aplicável):
+   ```sh
+   json-server --watch db.json
+   ```
+5. Execute a aplicação Angular:
+   ```sh
+   ng serve
+   ```
+6. Acesse no navegador: [http://localhost:4200](http://localhost:4200)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Boas Práticas Aplicadas
+- Uso de **Interface/Type** para tipagem de objetos
+- **Validações** de formulário (campos obrigatórios, tamanho máximo, tipos)
+- Uso do **@Input** para passar dados para o componente de tabela
+- Estrutura modularizada seguindo padrões do Angular
+- Consumo de API RESTful
 
-## Running unit tests
+## Melhorias Futuras
+- Implementação de autenticação e autorização
+- Adição de paginação na listagem de pessoas
+- Criação de testes unitários para os componentes e serviços
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Demonstração
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
