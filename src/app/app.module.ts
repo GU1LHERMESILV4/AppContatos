@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { PersonEditComponent } from './components/person-edit/person-edit.component';
 import { PersonCreateComponent } from './components/person-create/person-create.component';
 import { PersonTableComponent } from './components/person-table/person-table.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     PersonListComponent,
     PersonEditComponent,
-    HeaderComponent,
+    HomeComponent,
     PersonTableComponent,
     PersonCreateComponent
   ],
@@ -25,9 +25,10 @@ import { HeaderComponent } from './components/header/header.component';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    RouterModule,  
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }
