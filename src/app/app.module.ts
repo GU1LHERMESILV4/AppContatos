@@ -4,17 +4,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component'; // ✅ Certifique-se de importar o AppComponent
+import { AppComponent } from './app.component';
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { PersonEditComponent } from './components/person-edit/person-edit.component';
 import { PersonCreateComponent } from './components/person-create/person-create.component';
 import { PersonTableComponent } from './components/person-table/person-table.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonListComponent,
     PersonEditComponent,
+    HeaderComponent,
     PersonTableComponent,
     PersonCreateComponent
   ],

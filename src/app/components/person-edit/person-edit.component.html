@@ -2,22 +2,22 @@
 
 <form (ngSubmit)="updatePerson()">
   <label>Nome:</label>
-  <input type="text" [(ngModel)]="person.name" name="name" required />
+  <input type="text" [(ngModel)]="person.nome" name="name" required />
 
   <label>CEP:</label>
   <input type="text" [(ngModel)]="person.cep" name="cep" required />
 
   <label>Endereço:</label>
-  <input type="text" [(ngModel)]="person.address" name="address" required />
+  <input type="text" [(ngModel)]="person.endereco" name="address" required />
 
   <label>Cidade:</label>
-  <input type="text" [(ngModel)]="person.city" name="city" required />
+  <input type="text" [(ngModel)]="person.cidade" name="city" required />
 
   <label>UF:</label>
   <input type="text" [(ngModel)]="person.uf" name="uf" required />
 
   <label>Telefone:</label>
-  <input type="text" [(ngModel)]="person.phone" name="phone" />
+  <input type="text" [(ngModel)]="person.telefone" name="phone" />
 
   <button type="submit">Salvar</button>
   <button type="button" (click)="router.navigate(['/list'])">Cancelar</button>

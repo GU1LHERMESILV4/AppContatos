@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Person } from 'src/app/interfaces/person.model';
 
+
 @Component({
   selector: 'app-person-table',
-  templateUrl: '/src/app/components/person-table/person-table.component.html',
+  templateUrl: './person-table.component.html',
 })
+
 export class PersonTableComponent {
   @Input() people: Person[] = [];
 

@@ -12,11 +12,11 @@
     </tr>
     <tr *ngFor="let person of people">
       <td>{{ person.id }}</td>
-      <td>{{ person.name }}</td>
-      <td>{{ person.address }}</td>
+      <td>{{ person.nome }}</td>
+      <td>{{ person.endereco }}</td>
       <td>{{ person.cep }}</td>
       <td>{{ person.uf }}</td>
-      <td>{{ person.phone }}</td>
+      <td>{{ person.telefone }}</td>
       <td>
         <button (click)="editPerson(person.id)">Editar</button>
         <button (click)="deletePerson(person.id)">Excluir</button>

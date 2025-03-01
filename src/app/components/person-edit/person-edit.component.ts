@@ -10,12 +10,12 @@ import { Person } from 'src/app/interfaces/person.model';
 export class PersonEditComponent implements OnInit {
   person: Person = {
     id: 0,
-    name: '',
+    nome: '',
     cep: '',
-    address: '',
-    city: '',
+    endereco: '',
+    cidade: '',
     uf: '',
-    phone: ''
+    telefone: ''
   };
 
   constructor(

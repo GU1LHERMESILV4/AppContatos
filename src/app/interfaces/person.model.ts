@@ -1,10 +1,10 @@
 export interface Person {
   id: number;
-  name: string;
+  nome: string;
   cep: string;
-  address: string;
-  city: string;
+  endereco: string;
+  cidade: string;
   uf: string;
-  phone?: string;  
-  active?: boolean;
+  telefone?: string;  
+  ativo?: boolean;
 }
