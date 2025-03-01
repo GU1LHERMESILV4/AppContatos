@@ -6,6 +6,7 @@ import { Person } from 'src/app/interfaces/person.model';
 @Component({
   selector: 'app-person-edit',
   templateUrl: './person-edit.component.html',
+  styleUrls: ['./person-edit.component.scss']
 })
 export class PersonEditComponent implements OnInit {
   person: Person = {
@@ -13,32 +14,35 @@ export class PersonEditComponent implements OnInit {
     nome: '',
     cep: '',
     endereco: '',
-    cidade: '',
     uf: '',
     telefone: ''
   };
 
   constructor(
     private personService: PersonService,
-    public router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = Number(this.route.snapshot.paramMap.get('id')); // Obtém o ID da URL
     if (id) {
-      this.personService.getPersonById(id).subscribe((data) => {
-        this.person = data;
+      this.personService.getPersonById(id).subscribe((data: Person) => {
+        if (data) {
+          this.person = data; // Preenche os campos com os dados do contato
+        }
       });
     }
   }
 
   updatePerson(): void {
-    if (this.person.id) {
-      this.personService.updatePerson(this.person.id, this.person).subscribe(() => {
-        alert('Pessoa atualizada com sucesso!');
-        this.router.navigate(['/list']);
-      });
-    }
+    this.personService.updatePerson(this.person.id, this.person).subscribe(() => {
+      alert('Contato atualizado com sucesso!');
+      this.router.navigate(['/list']);
+    });
+  }
+
+  goBack(): void {
+    this.router.navigate(['/list']);
   }
 }

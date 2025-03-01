@@ -1,24 +1,37 @@
-<h2>Editar Pessoa</h2>
+<div class="edit-container">
+  <h2>Editar Pessoa</h2>
 
-<form (ngSubmit)="updatePerson()">
-  <label>Nome:</label>
-  <input type="text" [(ngModel)]="person.nome" name="name" required />
+  <form (ngSubmit)="updatePerson()" class="edit-form">
+    <div class="form-group">
+      <label>Nome:</label>
+      <input type="text" [(ngModel)]="person.nome" name="name" required />
+    </div>
 
-  <label>CEP:</label>
-  <input type="text" [(ngModel)]="person.cep" name="cep" required />
+    <div class="form-group">
+      <label>CEP:</label>
+      <input type="text" [(ngModel)]="person.cep" name="cep" required />
+    </div>
 
-  <label>Endereço:</label>
-  <input type="text" [(ngModel)]="person.endereco" name="address" required />
+    <div class="form-group">
+      <label>Endereço:</label>
+      <input type="text" [(ngModel)]="person.endereco" name="address" required />
+    </div>
 
-  <label>Cidade:</label>
-  <input type="text" [(ngModel)]="person.cidade" name="city" required />
+    <div class="form-group">
+      <label>UF:</label>
+      <input type="text" [(ngModel)]="person.uf" name="uf" required />
+    </div>
 
-  <label>UF:</label>
-  <input type="text" [(ngModel)]="person.uf" name="uf" required />
+    <div class="form-group">
+      <label>Telefone:</label>
+      <input type="text" [(ngModel)]="person.telefone" name="phone" />
+    </div>
 
-  <label>Telefone:</label>
-  <input type="text" [(ngModel)]="person.telefone" name="phone" />
-
-  <button type="submit">Salvar</button>
-  <button type="button" (click)="router.navigate(['/list'])">Cancelar</button>
-</form>
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="button" class="btn btn-secondary" (click)="router.navigate(['/list'])">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

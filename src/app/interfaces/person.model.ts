@@ -3,7 +3,6 @@ export interface Person {
   nome: string;
   cep: string;
   endereco: string;
-  cidade: string;
   uf: string;
   telefone?: string;  
   ativo?: boolean;
