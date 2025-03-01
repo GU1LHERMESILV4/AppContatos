@@ -1,19 +1,30 @@
-<form [formGroup]="personForm">
-    <label>Nome:</label>
-    <input type="text" formControlName="nome" required />
-  
-    <label>CEP:</label>
-    <input type="text" formControlName="cep" (blur)="buscarCep()" required />
-  
-    <label>Endereço:</label>
-    <input type="text" formControlName="endereco" required />
-  
-    <label>Cidade:</label>
-    <input type="text" formControlName="cidade" required />
-  
-    <label>UF:</label>
-    <input type="text" formControlName="uf" required />
-  
-    <button type="submit">Salvar</button>
-  </form>
-  
+<form [formGroup]="personForm" class="person-form">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text" formControlName="nome" placeholder="Digite seu nome" required />
+  </div>
+
+  <div class="form-group">
+    <label for="cep">CEP:</label>
+    <input id="cep" type="text" formControlName="cep" placeholder="Digite seu CEP" (blur)="buscarCep()" required />
+  </div>
+
+  <div class="form-group">
+    <label for="endereco">Endereço:</label>
+    <input id="endereco" type="text" formControlName="endereco" placeholder="Digite seu endereço" required />
+  </div>
+
+  <div class="form-group">
+    <label for="cidade">Cidade:</label>
+    <input id="cidade" type="text" formControlName="cidade" placeholder="Digite sua cidade" required />
+  </div>
+
+  <div class="form-group">
+    <label for="uf">UF:</label>
+    <input id="uf" type="text" formControlName="uf" placeholder="Digite a UF" required />
+  </div>
+
+  <div class="btn-container">
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </div>
+</form>

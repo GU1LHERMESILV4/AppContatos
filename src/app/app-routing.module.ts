@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'list', component: PersonListComponent },
   { path: 'create', component: PersonCreateComponent },
   { path: 'edit/:id', component: PersonEditComponent },
-  { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 
 @NgModule({
