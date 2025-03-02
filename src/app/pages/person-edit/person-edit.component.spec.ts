@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule
 import { PersonEditComponent } from './person-edit.component';
 import { Person } from 'src/app/interfaces/person.model'; // Importe o modelo Person
 
@@ -10,7 +11,7 @@ describe('PersonEditComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ PersonEditComponent ],
-      imports: [ FormsModule ]
+      imports: [ FormsModule, HttpClientModule ] // Adicione o HttpClientModule
     })
     .compileComponents();
   });

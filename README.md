@@ -1,4 +1,4 @@
-# Gerenciamento de Pessoas - Angular 16
+# ☎ Gerenciamento de Contatos - Angular 16
 
 ## Descrição
 Este projeto tem como objetivo avaliar habilidades no desenvolvimento de aplicativos web utilizando o framework Angular 16. A aplicação permite listar, cadastrar, editar e excluir Pessoas, seguindo boas práticas e padrões recomendados.
@@ -11,7 +11,8 @@ Este projeto tem como objetivo avaliar habilidades no desenvolvimento de aplicat
 - **Busca automática de endereço via API do ViaCEP** ao digitar o CEP.
 
 ## Tecnologias Utilizadas
-- **Angular 16**
+- **Angular CLI: 16.2.16**
+- **Node.js: 18.20.7**
 - **TypeScript**
 - **HTML5 & CSS3**
 - **Bootstrap ou Material Angular (opcional para UI)**
