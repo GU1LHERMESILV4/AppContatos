@@ -48,33 +48,34 @@
         display: flex;
         justify-content: space-between;
         margin-top: 15px;
-  
+    
         .btn {
-          padding: 10px 15px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-size: 16px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
-  
+    
         .btn-primary {
-          background: #007bff;
-          color: white;
+            background: #007bff;
+            color: white;
+            margin-left: auto; // Move o botão "Salvar" para a borda direita
         }
-  
-        .btn-primary:hover {
-          background: #0056b3;
-        }
-  
+    
         .btn-secondary {
-          background: #ccc;
-          color: black;
+            background: #ccc;
+            color: black;
+            margin-right: auto; // Move o botão "Cancelar" para a borda esquerda
         }
-  
+    
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+    
         .btn-secondary:hover {
-          background: #999;
+            background: #999;
         }
-      }
     }
   }
-  
+}  
