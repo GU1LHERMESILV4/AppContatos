@@ -7,7 +7,7 @@ import { Person } from '../interfaces/person.model';
   providedIn: 'root'
 })
 export class PersonService {
-  private apiUrl = 'http://localhost:3000/people'; // URL da API
+  private apiUrl = 'http://localhost:4200'; 
 
   constructor(private http: HttpClient) {}
 
@@ -25,5 +25,9 @@ export class PersonService {
 
   deletePerson(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  savePerson(person: Person): Observable<Person> {
+    return this.http.post<Person>(this.apiUrl, person);
   }
 }

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CepService } from 'src/app/services/cep.service';
+import { PersonService } from 'src/app/services/person.service';
 import { Person } from 'src/app/interfaces/person.model';
 
 @Component({
@@ -11,7 +13,16 @@ import { Person } from 'src/app/interfaces/person.model';
 export class PersonCreateComponent implements OnInit {
   personForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private cepService: CepService) {}
+  
+  person: Person = {
+    id: 0,
+    nome: '',
+    cep: '',
+    endereco: '',
+    uf: '',
+    telefone: ''
+  };
+  constructor(private fb: FormBuilder, private cepService: CepService, private personService: PersonService) {}
 
   ngOnInit(): void {
     this.personForm = this.fb.group({
@@ -38,11 +49,15 @@ export class PersonCreateComponent implements OnInit {
     }
   }
 
-  salvarPessoa(): void {
+  savePerson(): void {
     if (this.personForm.valid) {
-      console.log('Pessoa salva:', this.personForm.value);
-    } else {
-      console.log('Formulário inválido');
+      this.personService.savePerson(this.personForm.value).subscribe(() => {
+        alert('Pessoa salva com sucesso!');
+      }, error => {
+        console.error('Erro ao salvar pessoa', error);
+        alert('Erro ao salvar pessoa. Verifique os dados e tente novamente.');
+      });
     }
   }
+
 }

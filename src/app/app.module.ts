@@ -10,7 +10,7 @@ import { PersonListComponent } from './pages/person-list/person-list.component';
 import { PersonEditComponent } from './pages/person-edit/person-edit.component';
 import { PersonCreateComponent } from './pages/person-create/person-create.component';
 import { PersonTableComponent } from './components/person-table/person-table.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { HomeComponent } from './components/home/home.component';
     PersonEditComponent,
     HomeComponent,
     PersonTableComponent,
-    PersonCreateComponent
+    PersonCreateComponent,
   ],
   imports: [
     BrowserModule,
