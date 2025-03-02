@@ -6,7 +6,7 @@ import { PersonEditComponent } from './pages/person-edit/person-edit.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'person', component: HomeComponent },
   { path: 'list', component: PersonListComponent },
   { path: 'create', component: PersonCreateComponent },
   { path: 'edit/:id', component: PersonEditComponent },
