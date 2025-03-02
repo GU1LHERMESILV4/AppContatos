@@ -1,21 +1,22 @@
 <div class="container">
-  
-    <div class="hero-section">
-      <h1>Bem-vindo ao Gerenciador de Pessoas</h1>
-      <p>
-        Aqui você pode cadastrar, editar e gerenciar contatos de maneira fácil e eficiente.
-      </p>
-      <div class="buttons">
-        <button class="btn btn-primary" routerLink="/create">
-          <i class="fa fa-user-plus"></i> Adicionar Pessoa
-        </button>        
-        <a class="btn secondary" routerLink="/list">
-          <i class="fa fa-address-book"></i> Ver Contatos
-        </a>
-      </div>
+  <!-- Menu ou conteúdo do herói -->
+  <div class="hero-section">
+    <h1>Bem-vindo ao Gerenciador de Pessoas</h1>
+    <p>
+      Aqui você pode cadastrar, editar e gerenciar contatos de maneira fácil e eficiente.
+    </p>
+    <div class="buttons">
+      <!-- Botão para adicionar pessoa -->
+      <button class="btn btn-primary" routerLink="/create">
+        <i class="fa fa-user-plus"></i> Adicionar Pessoa
+      </button>        
+      <!-- Botão para listar pessoas -->
+      <a class="btn secondary" routerLink="/list">
+        <i class="fa fa-address-book"></i> Ver Contatos
+      </a>
     </div>
-
-    <router-outlet></router-outlet>
-  
   </div>
-  
+
+  <!-- O conteúdo das páginas será injetado aqui -->
+  <router-outlet></router-outlet>
+</div>

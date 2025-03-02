@@ -57,7 +57,7 @@
       display: flex;
       justify-content: space-between;
       margin-top: 15px;
-    }
+
       .btn {
         padding: 10px 15px;
         border: none;
@@ -65,4 +65,23 @@
         cursor: pointer;
         font-size: 16px;
       }
-} 
+
+      .btn-primary {
+        background: #007bff;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #0056b3;
+      }
+
+      .btn-secondary {
+        background: #ccc;
+        color: black;
+      }
+
+      .btn-secondary:hover {
+        background: #999;
+      }
+    }
+}
