@@ -8,6 +8,7 @@
         type="text" 
         [(ngModel)]="person.nome" 
         name="name" 
+        placeholder="{{person.nome}}" 
         required />
     </div>
 
@@ -17,6 +18,7 @@
         type="text" 
         [(ngModel)]="person.cep" 
         name="cep" 
+        placeholder="{{person.cep}}" 
         required />
     </div>
 
@@ -26,6 +28,7 @@
         type="text" 
         [(ngModel)]="person.endereco" 
         name="address" 
+        placeholder="{{person.endereco}}" 
         required />
     </div>
 
@@ -35,6 +38,7 @@
         type="text" 
         [(ngModel)]="person.uf" 
         name="uf" 
+        placeholder="{{person.uf}}" 
         required />
     </div>
 
@@ -43,7 +47,8 @@
       <input 
         type="text" 
         [(ngModel)]="person.telefone" 
-        name="phone"/>
+        name="phone" 
+        placeholder="{{person.telefone}}" />
     </div>
 
     <div class="button-group">
